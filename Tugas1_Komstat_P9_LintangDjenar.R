@@ -37,3 +37,7 @@ print(paste("Jumlah outlier yang terdeteksi:", length(outliers)))
 if(length(outliers) == 0) {
   print("Data MPG bersih dari pencilan, siap untuk analisis visual.")
 }
+
+# Mengecek apakah ada data yang kosong (NA) di dataset mtcars
+missing_data <- sum(is.na(mtcars))
+print(paste("Jumlah data missing:", missing_data))

@@ -21,3 +21,10 @@ print(paste("Rata-rata MPG:", round(mean_mpg, 2)))
 print(paste("Standar Deviasi MPG:", round(sd_mpg, 2)))
 print(paste("Nilai Maksimum MPG:", max_mpg))
 print(paste("Nilai Minimum MPG:", min_mpg))
+
+# Membuat Histogram untuk variabel MPG agar terlihat distribusinya
+hist(mtcars$mpg, 
+     main = "Distribusi Efisiensi Bahan Bakar (MPG)",
+     xlab = "Miles Per Gallon",
+     col = "hotpink",
+     border = "white")

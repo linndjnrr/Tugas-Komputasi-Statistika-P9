@@ -28,3 +28,12 @@ hist(mtcars$mpg,
      xlab = "Miles Per Gallon",
      col = "hotpink",
      border = "white")
+
+# Mengecek apakah ada data pencilan (outlier) pada variabel MPG
+outliers <- boxplot.stats(mtcars$mpg)$out
+print(paste("Jumlah outlier yang terdeteksi:", length(outliers)))
+
+# Memberikan keterangan jika data bersih
+if(length(outliers) == 0) {
+  print("Data MPG bersih dari pencilan, siap untuk analisis visual.")
+}

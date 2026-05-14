@@ -67,3 +67,10 @@ print(paste("Jumlah data missing:", missing_data))
           col = "red",
           border = "white")
 >>>>>>> visualisasi
+
+# Analisis Korelasi
+# Melihat korelasi antara berat mobil (wt) dan efisiensi (mpg)
+korelasi_mpg_wt <- cor(mtcars$mpg, mtcars$wt)
+print(paste("Nilai Korelasi MPG vs Weight:", round(korelasi_mpg_wt, 3)))
+# Komentar: Nilai korelasi negatif yang kuat menunjukkan semakin berat mobil, 
+# semakin rendah efisiensi bahan bakarnya.

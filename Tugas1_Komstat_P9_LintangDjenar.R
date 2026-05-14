@@ -22,9 +22,26 @@ print(paste("Standar Deviasi MPG:", round(sd_mpg, 2)))
 print(paste("Nilai Maksimum MPG:", max_mpg))
 print(paste("Nilai Minimum MPG:", min_mpg))
 
-# HISTOGRAM (Visualisasi Distribusi)
-hist(mtcars$mpg, 
-     main = "Distribusi MPG", 
-     col = "pink", # Pink estetik
-     border = "white")
+# SCATTER PLOT (Visualisasi Hubungan)
+  plot(mtcars$wt, mtcars$mpg, 
+       main = "Hubungan Berat Mobil vs MPG",
+       pch = 19, 
+       col = "hotpink")
 
+# BOXPLOT (Deteksi Outlier & Distribusi)
+# distribusi MPG berdasarkan jumlah silinder (cyl)
+  boxplot(mpg ~ cyl, data = mtcars,
+          main = "Efisiensi Bahan Bakar berdasarkan Silinder",
+          xlab = "Jumlah Silinder",
+          ylab = "Miles Per Gallon (MPG)",
+          col = c("pink", "red", "hotpink"), 
+          border = "black")
+  
+# BARPLOT (Perbandingan Jumlah)
+# Menghitung frekuensi jenis transmisi (0 = automatic, 1 = manual)
+  transmisi <- table(mtcars$am)
+  barplot(transmisi, 
+          main = "Jumlah Kendaraan berdasarkan Transmisi",
+          names.arg = c("Automatic", "Manual"),
+          col = "red",
+          border = "white")
